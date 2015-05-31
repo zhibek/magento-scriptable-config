@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Zhibek_Migration>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Zhibek_Migration>
+    </modules>
+</config>

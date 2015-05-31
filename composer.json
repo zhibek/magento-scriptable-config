@@ -1,0 +1,17 @@
+{
+    "name": "zhibek/magento-scriptable-config",
+    "type": "magento-module",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "John Levermore",
+            "email": "john.levermore@zhibek.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "bin": ["app/code/community/Zhibek/Migration/shell/cacheclear.php",
+            "app/code/community/Zhibek/Migration/shell/install.php",
+	    "app/code/community/Zhibek/Migration/shell/migrate.php"]
+}

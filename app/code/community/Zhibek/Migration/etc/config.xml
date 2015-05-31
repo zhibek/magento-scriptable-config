@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Zhibek_Migration>
+            <version>1.0.0.0</version>
+        </Zhibek_Migration>
+    </modules>
+    <global>
+        <resources>
+            <migration_setup>
+                <setup>
+                    <module>Zhibek_Migration</module>
+                </setup>
+            </migration_setup>
+        </resources>
+        <helpers>
+            <migration>
+                <class>Zhibek_Migration_Helper</class>
+            </migration>
+        </helpers>
+    </global>
+</config>
