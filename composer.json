@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "magento-hackathon/magento-composer-installer": "*"
+        "magento-hackathon/magento-composer-installer": "*",
+        "magento/core": "*"
     },
     "bin": ["app/code/community/Zhibek/Migration/shell/cacheclear.sh",
             "app/code/community/Zhibek/Migration/shell/install.sh",
