@@ -1,7 +1,7 @@
 <?php
 
-// Non-standard path required to reference shell/abstract.php within magento vendor directory
-require_once __DIR__ . '/../../../../../../../../magento/core/shell/abstract.php';
+// Non-standard path required to reference shell/abstract.php in /magento directory (outside of /vendor)
+require_once __DIR__ . '/../../../../../../../../../magento/shell/abstract.php';
 
 class Zhibek_Migration_Shell_Migrate extends Mage_Shell_Abstract
 {
