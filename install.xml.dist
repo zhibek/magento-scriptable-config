@@ -1,0 +1,17 @@
+<!-- 
+This file is used by shell/install.php to determine configuration settings, when
+installing Magento.
+-->
+<install>
+    <db_host>localhost</db_host>
+    <db_name>magentotest</db_name>
+    <db_user>magentotest</db_user>
+    <db_pass>magentotest</db_pass>
+    <url>http://example.org/</url>
+    <secure_base_url></secure_base_url>
+    <admin_lastname>Admin</admin_lastname>
+    <admin_firstname>Example</admin_firstname>
+    <admin_email>admin@example.org</admin_email>
+    <admin_username>admin</admin_username>
+    <admin_password>password</admin_password>
+</install>
