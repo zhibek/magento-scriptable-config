@@ -11,7 +11,7 @@
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
     },
-    "bin": ["app/code/community/Zhibek/Migration/shell/cacheclear.php",
-            "app/code/community/Zhibek/Migration/shell/install.php",
-	    "app/code/community/Zhibek/Migration/shell/migrate.php"]
+    "bin": ["app/code/community/Zhibek/Migration/shell/cacheclear.sh",
+            "app/code/community/Zhibek/Migration/shell/install.sh",
+	    "app/code/community/Zhibek/Migration/shell/migrate.sh"]
 }
