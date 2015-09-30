@@ -17,16 +17,16 @@ class Zhibek_Migration_Shell_Migrate extends Mage_Shell_Abstract
             $updates = Mage_Core_Model_Resource_Setup::applyAllUpdates();
 
             if ($updates) {
-                print('Migrations executed successfully.');
-                exit;
+                print('Migrations executed successfully.' . PHP_EOL);
+                exit(0);
             } else {
-                print('Migrations did not return success code.');
-                exit;
+                print('Migrations did not return success code.' . PHP_EOL);
+                exit(1);
             }
         
         } else {
             print $this->usageHelp();
-            exit;
+            exit(1);
         }
         
     }

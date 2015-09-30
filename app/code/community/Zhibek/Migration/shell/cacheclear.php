@@ -17,7 +17,8 @@ class Zhibek_Migration_Shell_CacheClear extends Mage_Shell_Abstract
             echo Mage::getModel('catalog/product_image')->clearCache();
             echo "[OK]" . PHP_EOL . PHP_EOL;
         } catch (Exception $e) {
-            die("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            print("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            exit(1);
         }
     }
 
@@ -44,7 +45,8 @@ class Zhibek_Migration_Shell_CacheClear extends Mage_Shell_Abstract
             }
             echo PHP_EOL;
         } catch (Exception $e) {
-            die("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            print("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            exit(1);
         }
     }
 
@@ -57,7 +59,8 @@ class Zhibek_Migration_Shell_CacheClear extends Mage_Shell_Abstract
             Mage::dispatchEvent('clean_media_cache_after');
             echo "[OK]" . PHP_EOL . PHP_EOL;
         } catch (Exception $e) {
-            die("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            print("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            exit(1);
         }
     }
 
@@ -69,7 +72,8 @@ class Zhibek_Migration_Shell_CacheClear extends Mage_Shell_Abstract
             echo Mage::app()->getCacheInstance()->clean() ? "[OK]" : "[ERROR]";
             echo PHP_EOL . PHP_EOL;
         } catch (Exception $e) {
-            die("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            print("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            exit(1);
         }
     }
 
@@ -88,18 +92,19 @@ class Zhibek_Migration_Shell_CacheClear extends Mage_Shell_Abstract
             echo "Cache... ";
             $this->_rRmDirContent(Mage::getBaseDir('cache'));
             echo "[OK]" . PHP_EOL;
-            echo "Full page cache... ";
-            $this->_rRmDirContent(Mage::getBaseDir('var') . DIRECTORY_SEPARATOR . 'full_page_cache');
-            echo "[OK]" . PHP_EOL;
-            echo "Minify cache... ";
-            $this->_rRmDirContent(Mage::getBaseDir('var') . DIRECTORY_SEPARATOR . '/minifycache');
-            echo "[OK]" . PHP_EOL;
+            //echo "Full page cache... ";
+            //$this->_rRmDirContent(Mage::getBaseDir('var') . DIRECTORY_SEPARATOR . 'full_page_cache');
+            //echo "[OK]" . PHP_EOL;
+            //echo "Minify cache... ";
+            //$this->_rRmDirContent(Mage::getBaseDir('var') . DIRECTORY_SEPARATOR . '/minifycache');
+            //echo "[OK]" . PHP_EOL;
             echo "Session... ";
             $this->_rRmDirContent(Mage::getBaseDir('session'));
             echo "[OK]" . PHP_EOL;
             echo PHP_EOL;
         } catch (Exception $e) {
-            die("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            print("[ERROR:" . $e->getMessage() . "]" . PHP_EOL);
+            exit(1);
         }
     }
 
@@ -126,12 +131,12 @@ class Zhibek_Migration_Shell_CacheClear extends Mage_Shell_Abstract
             foreach ($caches as $cache) {
                 echo "\t" . $cache . PHP_EOL;
             }
-            die();
+            exit(0);
         }
 
         if ($this->getArg('all')) {
             $this->cleanAll();
-            die();
+            exit(0);
         }
 
         if ($this->getArg('clean') && in_array($this->getArg('clean'), $caches)) {

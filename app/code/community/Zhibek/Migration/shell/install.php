@@ -78,22 +78,22 @@ class Zhibek_Migration_Shell_Install extends Mage_Shell_Abstract
 
             // run the installer and hope for success
             if ($installer->init($app) && $installer->setArgs($config) && $installer->install()) {
-                print 'SUCCESS: ' . $installer->getEncryptionKey() . "\n";
-                exit;
+                print 'SUCCESS: ' . $installer->getEncryptionKey() . PHP_EOL;
+                exit(0);
             // otherwise print errors
             } else {
                 if ($installer->getErrors()) {
-                    print "\nFAILED\n";
+                    print PHP_EOL . 'FAILED' . PHP_EOL;
                     foreach ($installer->getErrors() as $error) {
-                        print $error . "\n";
+                        print $error . PHP_EOL;
                     }
                 }
-                exit;
+                exit(1);
             }
         
         } else {
             print $this->usageHelp();
-            exit;
+            exit(1);
         }
     }
     
