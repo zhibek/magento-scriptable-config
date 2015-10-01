@@ -14,9 +14,10 @@ class Zhibek_Migration_Shell_Migrate extends Mage_Shell_Abstract
         if ($this->getArg('migrate')) {
                 
             Mage::app();
-            $updates = Mage_Core_Model_Resource_Setup::applyAllUpdates();
+            $schemaUpdates = Mage_Core_Model_Resource_Setup::applyAllUpdates();
+            $dataUpdates = Mage_Core_Model_Resource_Setup::applyAllDataUpdates();
 
-            if ($updates) {
+            if ($schemaUpdates && $dataUpdates) {
                 print('Migrations executed successfully.' . PHP_EOL);
                 exit(0);
             } else {
